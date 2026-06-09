@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OceanTech — Serviços Offshore | Manutenção, Inspeção e Integridade · Macaé/RJ</title>
+  <meta name="description" content="Serviços offshore e onshore para óleo & gás na Bacia de Campos: ensaios não destrutivos (END), caldeiraria, pintura industrial, acesso por corda (IRATA), paradas programadas e inspeção NR-13. Macaé/RJ.">
+
+  <!--
+    ============================================================
+    TEMPLATE · SITE INSTITUCIONAL — SERVIÇOS OFFSHORE / INDUSTRIAL
+    Para adaptar a cada cliente, altere apenas:
+      1. <title> e <meta name="description">           (SEO)
+      2. Nome da marca: procure por  OceanTech
+      3. WhatsApp dos links: procure por  5521994380272
+      4. Telefone/e-mail exibidos: bloco #orcamento (marcados com  EDITAR)
+      5. Cidade/região: procure por  Macaé  e  Bacia de Campos
+      6. Indicadores: seção .numeros  ->  data-alvo
+      7. Serviços: seção #servicos  e os chips "Também executamos"
+      8. Clientes e depoimento: seção #clientes  (marcados com  EDITAR)
+    ============================================================
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      /* — Paleta oceânica com profundidade — */
+      --bg:#06141f; --bg-2:#0a1f2e; --bg-3:#0c2433;
+      --panel:#0e2738; --panel-2:#12304400;
+      --line:rgba(140,165,185,.13); --line-2:rgba(140,165,185,.27);
+      --text:#dce7f0; --dim:#92a6b8; --faint:#5f7588; --white:#f4f9fc;
+      --steel:#6b8da9;
+      --teal:#1cc0b6; --teal-2:#16a89f; --teal-deep:#0c7a73;
+      --safety:#ff6a1a; --safety-2:#ff8742;
+      --grad-warm:linear-gradient(135deg,#ff7a2e,#ff5a1a);
+      --grad-cool:linear-gradient(135deg,#1cc0b6,#0c7a73);
+      --display:'Barlow Condensed',sans-serif; --body:'Inter',sans-serif;
+      --r:5px; --maxw:1180px;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.45;
+      background-image:linear-gradient(rgba(140,165,185,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(140,165,185,.022) 1px,transparent 1px);
+      background-size:48px 48px}
+    .wrap{width:90%;max-width:var(--maxw);margin:0 auto}
+    a{text-decoration:none;color:inherit}
+    img,svg{display:block}
+    h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;text-transform:uppercase;letter-spacing:.4px}
+    section{padding:88px 0}
+
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:600;
+      font-size:.82rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+    .eyebrow::before{content:'';width:28px;height:3px;background:var(--grad-cool);display:inline-block;border-radius:2px}
+    .titulo{font-size:clamp(1.95rem,3.6vw,2.55rem);color:var(--white)}
+    .titulo .hl{color:var(--safety)}
+    .sub{color:var(--dim);max-width:600px;margin-top:14px;font-size:1.02rem}
+    .head{margin-bottom:46px}
+
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 27px;border-radius:var(--r);
+      font-family:var(--display);font-weight:600;font-size:1rem;letter-spacing:1px;text-transform:uppercase;
+      cursor:pointer;border:1px solid transparent;transition:transform .18s,box-shadow .2s,background .2s,border-color .2s,color .2s}
+    .btn svg{width:17px;height:17px}
+    .btn-p{background:var(--grad-warm);color:#fff;box-shadow:0 8px 22px -8px rgba(255,106,26,.6)}
+    .btn-p:hover{transform:translateY(-2px);box-shadow:0 12px 28px -8px rgba(255,106,26,.7)}
+    .btn-o{background:rgba(255,255,255,.02);color:var(--text);border-color:var(--line-2)}
+    .btn-o:hover{border-color:var(--teal);color:var(--white)}
+
+    /* — Logo (assinatura) — */
+    .brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:700;
+      font-size:1.5rem;color:var(--white);text-transform:uppercase;letter-spacing:1px}
+    .brand .mark{width:42px;height:42px;flex-shrink:0;filter:drop-shadow(0 4px 10px rgba(12,122,115,.35))}
+    .brand b{color:var(--teal);font-weight:700}
+
+    /* — Header — */
+    header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(6,20,31,.82);
+      backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    header::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--safety),var(--teal))}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .links{display:none;align-items:center;gap:30px}
+    .links a{font-size:.9rem;color:var(--dim);font-weight:500;font-family:var(--body);transition:color .2s}
+    .links a:hover{color:var(--white)}
+    .links .cta{font-family:var(--display);font-weight:600;letter-spacing:1px;text-transform:uppercase;
+      color:#fff;background:var(--grad-warm);padding:10px 20px;border-radius:var(--r);font-size:.86rem;
+      box-shadow:0 6px 16px -8px rgba(255,106,26,.6)}
+    .links .cta:hover{transform:translateY(-1px)}
+    .menu-btn{display:flex;background:none;border:none;color:var(--white);cursor:pointer}
+    .menu-btn svg{width:27px;height:27px}
+    .links.open{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:flex-start;
+      background:var(--bg-2);padding:18px 5%;gap:14px;border-bottom:1px solid var(--line)}
+    @media(min-width:920px){.links{display:flex}.menu-btn{display:none}}
+
+    /* — Hero atmosférico — */
+    .hero{padding:140px 0 76px;position:relative;border-bottom:1px solid var(--line);overflow:hidden;
+      background:
+        radial-gradient(820px 480px at 80% 12%, rgba(28,192,182,.14), transparent 60%),
+        radial-gradient(680px 420px at 6% 96%, rgba(255,106,26,.07), transparent 55%),
+        linear-gradient(180deg,#06141f 0%, #0a2030 100%)}
+    .hero-grid{display:grid;grid-template-columns:1fr;gap:46px;align-items:center;position:relative;z-index:2}
+    .tag{display:inline-flex;align-items:center;gap:9px;font-family:var(--display);font-weight:500;
+      font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--dim);
+      padding:6px 14px;border:1px solid var(--line-2);border-radius:100px;margin-bottom:22px;background:rgba(255,255,255,.02)}
+    .tag .dot{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 4px rgba(28,192,182,.18)}
+    .hero h1{font-size:clamp(2.4rem,5.6vw,3.8rem);color:var(--white);font-weight:700;margin-bottom:20px}
+    .hero h1 .hl{background:var(--grad-warm);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .hero .lead{font-size:1.13rem;color:var(--dim);max-width:540px;margin-bottom:28px}
+    .hero-btns{display:flex;flex-wrap:wrap;gap:13px;margin-bottom:30px}
+    .normas-strip{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;padding-top:24px;border-top:1px solid var(--line)}
+    .normas-strip span{font-family:var(--display);font-weight:600;font-size:.84rem;letter-spacing:1.5px;color:var(--faint)}
+    .normas-strip b{font-family:var(--display);font-weight:600;font-size:.82rem;letter-spacing:1px;color:var(--steel);
+      border:1px solid var(--line-2);padding:3px 9px;border-radius:3px}
+    .hero-grid>div{max-width:760px}
+
+    /* — Indicadores — */
+    .numeros{background:linear-gradient(180deg,var(--bg-2),var(--bg-3));border-bottom:1px solid var(--line);padding:0}
+    .num-grid{display:grid;grid-template-columns:repeat(2,1fr)}
+    .num-item{padding:36px 24px;text-align:center;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative}
+    .num-item::after{content:'';position:absolute;left:50%;bottom:24px;transform:translateX(-50%);width:26px;height:2px;background:var(--teal);opacity:.0;transition:opacity .4s}
+    .num-item.vis::after{opacity:.7}
+    .num-item:nth-child(2n){border-right:none}
+    .num-item .n{font-family:var(--display);font-weight:700;font-size:2.8rem;color:var(--white);line-height:1}
+    .num-item .n .u{color:var(--safety)}
+    .num-item .l{font-size:.85rem;color:var(--dim);margin-top:12px;text-transform:uppercase;letter-spacing:1px;font-family:var(--display);font-weight:500}
+    @media(min-width:768px){.num-grid{grid-template-columns:repeat(4,1fr)}
+      .num-item{border-bottom:none}.num-item:nth-child(2n){border-right:1px solid var(--line)}.num-item:last-child{border-right:none}}
+
+    /* — Serviços — */
+    .serv-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    @media(min-width:640px){.serv-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:980px){.serv-grid{grid-template-columns:repeat(3,1fr)}}
+    .serv{background:var(--bg-2);padding:32px 28px;transition:background .25s;position:relative;overflow:hidden}
+    .serv::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--safety));transform:scaleX(0);transform-origin:left;transition:transform .35s}
+    .serv:hover{background:var(--panel)}
+    .serv:hover::before{transform:scaleX(1)}
+    .serv .ix{font-family:var(--display);font-weight:600;font-size:.8rem;letter-spacing:1.5px;color:var(--teal)}
+    .serv .ic{width:48px;height:48px;margin:16px 0 18px;display:flex;align-items:center;justify-content:center;
+      border-radius:var(--r);background:linear-gradient(135deg,rgba(28,192,182,.12),rgba(12,122,115,.06));border:1px solid var(--line-2)}
+    .serv .ic svg{width:24px;height:24px;color:var(--teal)}
+    .serv h3{font-size:1.3rem;color:var(--white);margin-bottom:10px}
+    .serv p{color:var(--dim);font-size:.95rem;margin-bottom:14px}
+    .serv .itens{display:flex;flex-wrap:wrap;gap:6px}
+    .serv .itens span{font-size:.74rem;font-family:var(--display);font-weight:500;letter-spacing:.6px;
+      color:var(--steel);border:1px solid var(--line);padding:3px 9px;border-radius:3px}
+
+    .extra{margin-top:34px;padding:30px;border:1px solid var(--line);border-radius:8px;
+      background:linear-gradient(135deg,var(--bg-2),var(--bg-3))}
+    .extra .lab{font-family:var(--display);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+      font-size:.82rem;color:var(--teal);margin-bottom:16px}
+    .chips{display:flex;flex-wrap:wrap;gap:9px}
+    .chips span{font-size:.85rem;color:var(--text);background:var(--panel);border:1px solid var(--line);
+      padding:7px 14px;border-radius:100px;transition:border-color .2s,color .2s}
+    .chips span:hover{border-color:var(--teal);color:var(--white)}
+
+    /* — Diferenciais — */
+    .dif-wrap{background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .dif-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    @media(min-width:768px){.dif-grid{grid-template-columns:repeat(2,1fr)}}
+    .dif{background:var(--bg-2);padding:30px 28px;display:flex;gap:18px;align-items:flex-start;transition:background .25s}
+    .dif:hover{background:var(--panel)}
+    .dif .ic{width:44px;height:44px;flex-shrink:0;border-radius:var(--r);display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,rgba(255,106,26,.16),rgba(255,106,26,.04));border:1px solid rgba(255,106,26,.28)}
+    .dif .ic svg{width:21px;height:21px;color:var(--safety)}
+    .dif h3{font-size:1.14rem;color:var(--white);margin-bottom:6px}
+    .dif p{color:var(--dim);font-size:.92rem}
+
+    /* — Normas — */
+    .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    @media(min-width:560px){.cert-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:920px){.cert-grid{grid-template-columns:repeat(6,1fr)}}
+    .cert{background:var(--bg-2);padding:28px 12px;text-align:center;transition:background .25s;position:relative}
+    .cert::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);transform:scaleY(0);transition:transform .3s}
+    .cert:hover{background:var(--panel)}
+    .cert:hover::before{transform:scaleY(1)}
+    .cert b{display:block;font-family:var(--display);font-weight:700;font-size:1.2rem;color:var(--white);letter-spacing:.5px}
+    .cert span{font-size:.74rem;color:var(--faint);text-transform:uppercase;letter-spacing:1px;font-family:var(--display)}
+
+    /* — Clientes — */
+    .clientes{background:linear-gradient(180deg,var(--bg-2),var(--bg-3));border-top:1px solid var(--line)}
+    .logos{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-bottom:44px}
+    @media(min-width:768px){.logos{grid-template-columns:repeat(4,1fr)}}
+    .logo-c{background:var(--bg-2);height:90px;display:flex;align-items:center;justify-content:center;gap:9px;
+      color:var(--faint);font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:1.5px;transition:color .25s,background .25s}
+    .logo-c:hover{color:var(--steel);background:var(--panel)}
+    .logo-c svg{width:26px;height:26px;opacity:.6}
+    .depo{max-width:790px;margin:0 auto;text-align:center;padding:44px 30px;border:1px solid var(--line);border-radius:10px;
+      background:radial-gradient(600px 300px at 50% 0%,rgba(28,192,182,.07),transparent 70%),var(--bg-2)}
+    .depo .q{font-family:var(--display);font-weight:700;font-size:3rem;background:var(--grad-cool);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:.7}
+    .depo p{font-size:1.18rem;color:var(--text);margin:14px 0 20px}
+    .depo .who{font-family:var(--display);font-weight:600;color:var(--white);letter-spacing:1px;text-transform:uppercase;font-size:1.04rem}
+    .depo .role{font-size:.85rem;color:var(--faint)}
+
+    /* — Orçamento — */
+    .orc{background:var(--bg)}
+    .orc-grid{display:grid;grid-template-columns:1fr;gap:40px}
+    @media(min-width:920px){.orc-grid{grid-template-columns:1fr 1fr;align-items:start}}
+    .orc-info h2{font-size:clamp(1.85rem,3vw,2.35rem);color:var(--white);margin-bottom:14px}
+    .orc-info>p{color:var(--dim);margin-bottom:28px;max-width:460px}
+    .contato{display:flex;flex-direction:column;gap:0;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+    .ct{display:flex;align-items:center;gap:15px;padding:18px 20px;border-bottom:1px solid var(--line);transition:background .2s}
+    .ct:hover{background:var(--bg-2)}
+    .ct:last-child{border-bottom:none}
+    .ct .ic{width:42px;height:42px;flex-shrink:0;border-radius:var(--r);display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(135deg,rgba(28,192,182,.14),rgba(12,122,115,.05));border:1px solid var(--line-2)}
+    .ct .ic svg{width:18px;height:18px;color:var(--teal)}
+    .ct b{display:block;color:var(--white);font-size:.96rem}
+    .ct span{font-size:.84rem;color:var(--dim)}
+    form{background:linear-gradient(135deg,var(--bg-2),var(--bg-3));border:1px solid var(--line);border-radius:10px;padding:30px}
+    .campo{margin-bottom:16px}
+    .campo label{display:block;font-size:.8rem;color:var(--dim);margin-bottom:7px;font-weight:500;
+      font-family:var(--display);letter-spacing:1px;text-transform:uppercase}
+    .campo input,.campo select,.campo textarea{width:100%;padding:12px 14px;background:var(--bg);
+      border:1px solid var(--line-2);border-radius:var(--r);color:var(--text);font-family:var(--body);font-size:.95rem;transition:border-color .2s,box-shadow .2s}
+    .campo input:focus,.campo select:focus,.campo textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(28,192,182,.15)}
+    .campo textarea{resize:vertical;min-height:88px}
+    form .btn{width:100%;justify-content:center;margin-top:4px}
+    .erro{color:#f8a585;font-size:.82rem;margin-top:6px;display:none}
+
+    /* — Aviso demo — */
+    .demo{background:linear-gradient(135deg,rgba(28,192,182,.08),rgba(255,106,26,.05));border-top:1px solid var(--line-2);border-bottom:1px solid var(--line);padding:17px 0}
+    .demo .wrap{display:flex;align-items:center;gap:13px;justify-content:center;text-align:left}
+    .demo svg{width:24px;height:24px;color:var(--teal);flex-shrink:0}
+    .demo span{font-size:.9rem;color:var(--dim);max-width:740px}
+    .demo strong{color:var(--text)}
+    .demo a{color:var(--safety);font-weight:600;text-decoration:underline}
+    @media(max-width:600px){.demo .wrap{flex-direction:column;text-align:center;gap:9px}}
+
+    /* — Footer — */
+    footer{padding:48px 0 30px;border-top:1px solid var(--line);background:var(--bg)}
+    .foot{display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+    .foot .copy{font-size:.84rem;color:var(--faint)}
+    .foot .copy a{color:var(--teal)}
+
+    /* — WhatsApp FAB — */
+    .fab{position:fixed;bottom:22px;right:22px;z-index:300;width:56px;height:56px;border-radius:50%;
+      background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 22px rgba(37,211,102,.4);transition:transform .2s}
+    .fab:hover{transform:translateY(-3px) scale(1.05)}
+    .fab svg{width:30px;height:30px;color:#fff}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+    .reveal.vis{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+  </style>
+</head>
+<body>
+
+  <!-- defs compartilhados da logo -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <linearGradient id="ocBadge" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#114a52"/><stop offset="1" stop-color="#071a26"/>
+      </linearGradient>
+      <linearGradient id="ocWave" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#1cc0b6"/><stop offset="1" stop-color="#0c7a73"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- NAV -->
+  <header id="topo">
+    <div class="wrap nav">
+      <a href="#topo" class="brand">
+        <span class="mark">
+          <svg viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="40" height="40" rx="11" fill="url(#ocBadge)" stroke="rgba(28,192,182,.35)"/>
+            <!-- torre de perfuração -->
+            <path d="M21 9 L29 30 H13 Z" fill="none" stroke="#eaf4f6" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M21 9 V30" stroke="#eaf4f6" stroke-width="1.1"/>
+            <path d="M16.6 22 H25.4 M15 27 H27" stroke="#9fc3c2" stroke-width="1.1"/>
+            <!-- pernas -->
+            <path d="M15.5 30 V33 M26.5 30 V33" stroke="#9fc3c2" stroke-width="1.2"/>
+            <!-- flare -->
+            <circle cx="21" cy="7.2" r="2.4" fill="#ff6a1a"/>
+            <circle cx="21" cy="7.2" r="4.4" fill="#ff6a1a" opacity="0.25"/>
+            <!-- onda -->
+            <path d="M8 33.5 q3.2 -2.4 6.4 0 t6.4 0 t6.4 0 t4 0" fill="none" stroke="url(#ocWave)" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Ocean<b>Tech</b>
+      </a>
+      <nav class="links">
+        <a href="#servicos">Serviços</a>
+        <a href="#diferenciais">Por que nós</a>
+        <a href="#normas">Normas</a>
+        <a href="#clientes">Clientes</a>
+        <a href="#orcamento" class="cta">Solicitar orçamento</a>
+      </nav>
+      <button class="menu-btn" onclick="document.querySelector('.links').classList.toggle('open')" aria-label="Abrir menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <div class="tag"><span class="dot"></span> Serviços offshore &amp; onshore · Macaé/RJ</div>
+          <h1>Manutenção, inspeção e <span class="hl">integridade</span> para óleo &amp; gás</h1>
+          <p class="lead">Equipe própria certificada para a Bacia de Campos. Ensaios não destrutivos, caldeiraria, pintura industrial, acesso por corda e paradas programadas — executados com segurança e dentro do prazo.</p>
+          <div class="hero-btns">
+            <a href="#orcamento" class="btn btn-p">Solicitar orçamento
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#servicos" class="btn btn-o">Ver serviços</a>
+          </div>
+          <div class="normas-strip">
+            <span>Conformidade:</span>
+            <b>NR-13</b><b>NR-33</b><b>NR-35</b><b>API</b><b>ASME</b><b>IRATA</b>
+          </div>
+        </div>
+    </div>
+  </section>
+
+  <!-- INDICADORES (EDITAR os data-alvo) -->
+  <section class="numeros">
+    <div class="wrap">
+      <div class="num-grid">
+        <div class="num-item reveal"><div class="n"><span data-alvo="12">0</span><span class="u">+</span></div><div class="l">Anos na Bacia de Campos</div></div>
+        <div class="num-item reveal"><div class="n"><span data-alvo="150">0</span><span class="u">+</span></div><div class="l">Profissionais certificados</div></div>
+        <div class="num-item reveal"><div class="n"><span data-alvo="800">0</span><span class="u">+</span></div><div class="l">Serviços executados</div></div>
+        <div class="num-item reveal"><div class="n">24<span class="u">/7</span></div><div class="l">Atendimento a emergências</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">O que fazemos</div>
+        <h2 class="titulo">Serviços <span class="hl">técnicos</span> offshore e onshore</h2>
+        <p class="sub">Soluções de manutenção, inspeção e fabricação para plataformas, FPSOs, unidades de produção e plantas onshore na cadeia de óleo &amp; gás.</p>
+      </div>
+
+      <div class="serv-grid reveal">
+        <div class="serv">
+          <div class="ix">01</div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+          <h3>Manutenção industrial</h3>
+          <p>Manutenção preventiva, preditiva e corretiva de equipamentos estáticos e rotativos, com planejamento que reduz paradas não programadas.</p>
+          <div class="itens"><span>Estáticos</span><span>Rotativos</span><span>Lanças de guindaste</span></div>
+        </div>
+
+        <div class="serv">
+          <div class="ix">02</div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+          <h3>Ensaios não destrutivos (END)</h3>
+          <p>Inspeção de soldas e equipamentos por técnicas convencionais e avançadas, com laudos conforme normas API e ASME.</p>
+          <div class="itens"><span>LP</span><span>PM</span><span>Ultrassom</span><span>Phased Array</span><span>ToFD</span><span>PMI</span></div>
+        </div>
+
+        <div class="serv">
+          <div class="ix">03</div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7h-9M14 17H5M17 21a4 4 0 100-8 4 4 0 000 8zM7 11a4 4 0 100-8 4 4 0 000 8z"/></svg></div>
+          <h3>Caldeiraria, solda &amp; tubulação</h3>
+          <p>Fabricação, montagem e reparo de estruturas metálicas, tubulações, skids, cestas e contêineres, com soldadores qualificados.</p>
+          <div class="itens"><span>Estruturas</span><span>Tubulação</span><span>Skids</span><span>Reparos</span></div>
+        </div>
+
+        <div class="serv">
+          <div class="ix">04</div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7 3 3-7 7-3-3zM18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5zM2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <h3>Pintura &amp; tratamento de superfície</h3>
+          <p>Preparação de superfície, jateamento e esquemas de pintura industrial de alta performance para proteção anticorrosiva.</p>
+          <div class="itens"><span>Jateamento</span><span>ST2 / ST3</span><span>SP11</span><span>Anticorrosivo</span></div>
+        </div>
+
+        <div class="serv">
+          <div class="ix">05</div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v6M12 8l-4 4M12 8l4 4M5 16l7 6 7-6"/></svg></div>
+          <h3>Acesso por corda (IRATA)</h3>
+          <p>Engenharia de acesso e alpinismo industrial para serviços em altura e locais confinados, sem necessidade de andaimes.</p>
+          <div class="itens"><span>IRATA</span><span>NR-35</span><span>Linha de vida</span><span>Resgate</span></div>
+        </div>
+
+        <div class="serv">
+          <div class="ix">06</div>
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h3>Paradas programadas &amp; integridade</h3>
+          <p>Planejamento e execução de paradas (shutdown) e gestão de integridade de ativos, com planos de reparo conforme ASME PCC.</p>
+          <div class="itens"><span>Shutdown</span><span>PAR</span><span>Integridade</span><span>Comissionamento</span></div>
+        </div>
+      </div>
+
+      <div class="extra reveal">
+        <div class="lab">Também executamos</div>
+        <div class="chips">
+          <span>Inspeção NR-13 com Profissional Habilitado</span>
+          <span>Inspeção NR-20</span>
+          <span>DROPS — prevenção de queda de objetos</span>
+          <span>LGI — inspeção de içamento</span>
+          <span>Limpeza de tanques (NR-33)</span>
+          <span>Espaços confinados</span>
+          <span>Locação de equipamentos</span>
+          <span>Locação de mão de obra especializada</span>
+          <span>Fire Watch</span>
+          <span>Escaneamento 3D / As-built</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section id="diferenciais" class="dif-wrap">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Por que a OceanTech</div>
+        <h2 class="titulo">Confiabilidade que a operação <span class="hl">exige</span></h2>
+      </div>
+      <div class="dif-grid reveal">
+        <div class="dif">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <div><h3>Segurança em primeiro lugar</h3><p>Cultura HSE consolidada, APR e permissões de trabalho em todas as atividades, com meta de zero acidentes.</p></div>
+        </div>
+        <div class="dif">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><h3>Mobilização rápida</h3><p>Equipe de prontidão e logística própria em Macaé para atender emergências e demandas urgentes a bordo.</p></div>
+        </div>
+        <div class="dif">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div><h3>Equipe própria certificada</h3><p>Profissionais qualificados e certificados nas normas do setor, sem terceirização de serviços críticos.</p></div>
+        </div>
+        <div class="dif">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg></div>
+          <div><h3>Prazos cumpridos</h3><p>Planejamento e gestão de cronograma com relatórios de progresso, garantindo entrega dentro do contratado.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NORMAS -->
+  <section id="normas">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Conformidade</div>
+        <h2 class="titulo">Normas &amp; <span class="hl">certificações</span></h2>
+        <p class="sub">Atuação em conformidade com as principais normas regulamentadoras e padrões técnicos do setor de óleo &amp; gás.</p>
+      </div>
+      <div class="cert-grid reveal">
+        <div class="cert"><b>ISO 9001</b><span>Qualidade</span></div>
+        <div class="cert"><b>NR-13</b><span>Vasos &amp; caldeiras</span></div>
+        <div class="cert"><b>NR-33</b><span>Confinados</span></div>
+        <div class="cert"><b>NR-35</b><span>Altura</span></div>
+        <div class="cert"><b>API / ASME</b><span>Inspeção</span></div>
+        <div class="cert"><b>IRATA</b><span>Acesso por corda</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTES (EDITAR logos e depoimento) -->
+  <section id="clientes" class="clientes">
+    <div class="wrap">
+      <div class="head reveal">
+        <div class="eyebrow">Confiança</div>
+        <h2 class="titulo">Quem conta com a <span class="hl">OceanTech</span></h2>
+      </div>
+      <div class="logos reveal">
+        <div class="logo-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9c0-3 4-5 9-5s9 2 9 5M3 13h18"/></svg>PETROMAR</div>
+        <div class="logo-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg>NORDOIL</div>
+        <div class="logo-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20M4 20V8l8-5 8 5v12"/></svg>ENGEMAR</div>
+        <div class="logo-c"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>BACIATEC</div>
+      </div>
+      <div class="depo reveal">
+        <div class="q">&ldquo;</div>
+        <p>A equipe executou nossa parada programada dentro do prazo e sem nenhum registro de acidente. Técnica e organização do início ao fim.</p>
+        <div class="who">[ Nome do cliente ]</div>
+        <div class="role">[ Cargo · Empresa ]</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORÇAMENTO (EDITAR contatos) -->
+  <section id="orcamento" class="orc">
+    <div class="wrap">
+      <div class="orc-grid">
+        <div class="orc-info reveal">
+          <div class="eyebrow">Fale com a gente</div>
+          <h2>Solicite um orçamento</h2>
+          <p>Preencha o formulário com a sua demanda e a nossa equipe técnica retorna com uma proposta personalizada.</p>
+          <div class="contato">
+            <div class="ct"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><b>Macaé · Rio de Janeiro</b><span>Polo da Bacia de Campos</span></div></div>
+            <div class="ct"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg></div><div><b>(22) 0000-0000</b><span>Atendimento comercial · EDITAR</span></div></div>
+            <div class="ct"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg></div><div><b>comercial@suaempresa.com.br</b><span>Resposta em até 24h úteis · EDITAR</span></div></div>
+          </div>
+        </div>
+        <form id="orcForm" class="reveal" novalidate>
+          <div class="campo">
+            <label for="nome">Nome / Empresa *</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome ou empresa">
+            <div class="erro" id="erro-nome">Informe seu nome ou empresa.</div>
+          </div>
+          <div class="campo">
+            <label for="tel">Telefone / WhatsApp *</label>
+            <input type="tel" id="tel" name="tel" placeholder="(00) 00000-0000">
+            <div class="erro" id="erro-tel">Informe um telefone para contato.</div>
+          </div>
+          <div class="campo">
+            <label for="servico">Serviço de interesse</label>
+            <select id="servico" name="servico">
+              <option>Manutenção industrial</option>
+              <option>Ensaios não destrutivos (END)</option>
+              <option>Caldeiraria, solda &amp; tubulação</option>
+              <option>Pintura &amp; tratamento de superfície</option>
+              <option>Acesso por corda (IRATA)</option>
+              <option>Paradas programadas &amp; integridade</option>
+              <option>Inspeção NR-13 / NR-20</option>
+              <option>Locação de equipamentos / mão de obra</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="msg">Detalhes da demanda</label>
+            <textarea id="msg" name="msg" placeholder="Escopo, prazo e local do serviço..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-p">Enviar via WhatsApp
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVISO DEMO -->
+  <div class="demo">
+    <div class="wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <span><strong>Projeto demonstrativo.</strong> Site criado para apresentar o trabalho do desenvolvedor — não é uma empresa real. Quer um site institucional assim para a sua empresa? <a href="https://wa.me/5521994380272?text=Vi%20o%20site%20da%20OceanTech%20e%20quero%20um%20site%20institucional%20assim!" target="_blank" rel="noopener">Fale comigo</a>.</span>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap foot">
+      <a href="#topo" class="brand">
+        <span class="mark">
+          <svg viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="40" height="40" rx="11" fill="url(#ocBadge)" stroke="rgba(28,192,182,.35)"/>
+            <path d="M21 9 L29 30 H13 Z" fill="none" stroke="#eaf4f6" stroke-width="1.4" stroke-linejoin="round"/>
+            <path d="M21 9 V30" stroke="#eaf4f6" stroke-width="1.1"/>
+            <path d="M16.6 22 H25.4 M15 27 H27" stroke="#9fc3c2" stroke-width="1.1"/>
+            <path d="M15.5 30 V33 M26.5 30 V33" stroke="#9fc3c2" stroke-width="1.2"/>
+            <circle cx="21" cy="7.2" r="2.4" fill="#ff6a1a"/>
+            <circle cx="21" cy="7.2" r="4.4" fill="#ff6a1a" opacity="0.25"/>
+            <path d="M8 33.5 q3.2 -2.4 6.4 0 t6.4 0 t6.4 0 t4 0" fill="none" stroke="url(#ocWave)" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        Ocean<b>Tech</b>
+      </a>
+      <div class="copy">© <span id="ano"></span> OceanTech Serviços Offshore · Macaé/RJ. Site por <a href="#" target="_blank">Guimarães</a>.</div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp FAB -->
+  <a href="https://wa.me/5521994380272?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24z"/></svg>
+  </a>
+
+  <script>
+    document.getElementById('ano').textContent = new Date().getFullYear();
+
+    const animarNum = (el) => {
+      const alvo = +el.dataset.alvo;
+      let atual = 0;
+      const passo = Math.max(1, Math.ceil(alvo / 55));
+      const t = setInterval(() => {
+        atual += passo;
+        if (atual >= alvo) { atual = alvo; clearInterval(t); }
+        el.textContent = atual;
+      }, 26);
+    };
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          e.target.querySelectorAll('[data-alvo]').forEach(animarNum);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    document.getElementById('orcForm').addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      const nome = document.getElementById('nome');
+      const tel = document.getElementById('tel');
+      let ok = true;
+      [['nome', 'erro-nome'], ['tel', 'erro-tel']].forEach(([id, eid]) => {
+        const campo = document.getElementById(id);
+        document.getElementById(eid).style.display = campo.value.trim() ? 'none' : 'block';
+        if (!campo.value.trim()) ok = false;
+      });
+      if (!ok) return;
+      const servico = document.getElementById('servico').value;
+      const msg = document.getElementById('msg').value.trim();
+      let txt = `*Solicitacao de Orcamento - OceanTech*%0A%0A`;
+      txt += `*Nome/Empresa:* ${nome.value.trim()}%0A`;
+      txt += `*Telefone:* ${tel.value.trim()}%0A`;
+      txt += `*Servico:* ${servico}%0A`;
+      if (msg) txt += `*Detalhes:* ${msg}%0A`;
+      window.open(`https://wa.me/5521994380272?text=${txt}`, '_blank');
+    });
+
+    document.querySelectorAll('.links a').forEach(a => {
+      a.addEventListener('click', () => document.querySelector('.links').classList.remove('open'));
+    });
+  </script>
+
+</body>
+</html>
